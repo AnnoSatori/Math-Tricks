@@ -21,22 +21,22 @@ def Martingale(Cap, Bet, Top, Bottom, Stop, Rate):
             n += 1
         Cap += 2 * Pay
         n += 1
-    return [Cap, n]           # Return a list of last capital and number of rounds
+    return [Cap, n]           # Return a list containing the last capital and number of rounds
 
 if __name__ == '__main__':
     X = 1000                  # Initial capital
     p = 0.4                   # Probablity of win in each round
     E = 1100                  # Expectation (Objective)
     X0 = 100                  # Initial bet
-    Top = 0                   # Upper bound of bet
-    Bottom = 100              # Lower bound of bet
+    Top = 0                   # Upper bound of bet, default: 0 = inf
+    Bottom = 100              # Lower bound of bet, default: 0
 
-    rep = 10                  # Number of repeatitions
-    size = 1000               # Size of each repeatition
+    rep = 10                  # Number of repetitions
+    size = 1000               # Size of each repetition
     ans = []                  # Winning percentages
 
-    # Test
-    print(Martingale(X, X0, Top, Bottom, E, p)) 
+    # Random sample for testing
+    print(Martingale(X, X0, Top, Bottom, E, p))
 
     # Implement and result
     for _ in range(rep):
@@ -46,5 +46,5 @@ if __name__ == '__main__':
                 break
             elif Martingale(X, X0, Top, Bottom, E, p) != 'Lose':
                 s += 1
-        ans.append(s/size)
+        ans.append(s/size)    # Proportion
     print(ans)
