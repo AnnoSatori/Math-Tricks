@@ -3,3 +3,4 @@ This is a warehouse storing my codes that can implement algorithms in mathematic
 
 # Projects
 1. Martingale
+2. Fast Fibonacci
