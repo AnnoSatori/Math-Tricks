@@ -25,11 +25,11 @@ def Martingale(Cap, Bet, Top, Bottom, Stop, Rate):
     return [Cap, n]           # Return a list containing the last capital and the number of rounds
 
 
-''' Main '''
+# Main
 
 if __name__ == '__main__':
     
-    ''' This section is for parameters initialization '''
+    # Parameters initialization
 
     X = 1000                  # Initial capital
     p = 0.4                   # Probablity of win in each round
